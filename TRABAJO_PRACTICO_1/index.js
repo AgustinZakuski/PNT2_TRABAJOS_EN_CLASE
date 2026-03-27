@@ -54,3 +54,23 @@ const prodBuscado = productos.find((prod) => prod.nombre == "Gorra");
 console.log(prodBuscado);
 console.log("----------------------------------");
 
+
+// Parte 3: Métodos de validación -----------------------------------
+
+// 8. Verificar con .some():
+const precioLimite = 10000;
+const hayMasCaros = productos.some((prod) => prod.precio > precioLimite);
+console.log(hayMasCaros);
+console.log("----------------------------------");
+
+// 9. Verificar con .every():
+const precioMinimo = 1000;
+const todosMasCaros = productos.every((prod) => prod.precio > precioMinimo);
+console.log(todosMasCaros);
+console.log("----------------------------------");
+
+// 10. Verificar existencia con .includes():
+const aBuscar = "Campera";
+const estaIncluido = soloNombres.includes(aBuscar);
+console.log(estaIncluido);
+console.log("----------------------------------");
