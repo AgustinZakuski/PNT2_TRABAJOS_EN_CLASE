@@ -8,7 +8,7 @@ const productos = [
 { id: 5, nombre: "Campera", precio: 9500, categoria: "Ropa" }  
 ]; 
 
-// Comando ejecución: node ./TRABAJO_PRACTICO_1/index.js
+
 // Parte 1: Acceso a elementos y recorrido de arrays ----------------
 
 // 1. Acceder a propiedades individuales:
@@ -73,4 +73,29 @@ console.log("----------------------------------");
 const aBuscar = "Campera";
 const estaIncluido = soloNombres.includes(aBuscar);
 console.log(estaIncluido);
+console.log("----------------------------------");
+
+
+// Parte 4: ---------------------------------------------------------
+
+// 11. Ordenar con .sort():
+const ordenadosPorPrecio = [...productos].sort((a, b) => a.precio - b.precio)
+console.log(ordenadosPorPrecio);
+console.log("----------------------------------");
+
+// 12. Generar mensajes personalizados con .map():
+const mensajes = productos.map((prod) => `El producto ${prod.nombre} cuesta $${prod.precio} y pertenece a la categoría ${prod.categoria}`);
+console.log(mensajes);
+console.log("----------------------------------");
+
+
+// 13. Agregar productos con spread:
+const masProductos = [
+  { id: 6, nombre: "Corbata", precio: 800, categoria: "Accesorios" },
+  { id: 7, nombre: "Zapatos", precio: 4800, categoria: "Calzado" },
+  { id: 8, nombre: "Guantes", precio: 1200, categoria: "Accesorios" },
+  { id: 9, nombre: "Medias", precio: 500, categoria: "Ropa" }
+]
+const listaActualizada = [...productos, ...masProductos];
+console.log(listaActualizada);
 console.log("----------------------------------");
