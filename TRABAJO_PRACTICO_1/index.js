@@ -9,7 +9,7 @@ const productos = [
 ]; 
 
 // Comando ejecución: node ./TRABAJO_PRACTICO_1/index.js
-// Parte 1: Acceso a elementos y recorrido de arrays ---------------- 
+// Parte 1: Acceso a elementos y recorrido de arrays ----------------
 
 // 1. Acceder a propiedades individuales:
 console.log(productos[0]);
@@ -27,3 +27,30 @@ console.log("Recorrido con .forEach():");
 productos.forEach((prod) => {
   console.log(`Nombre del producto: ${prod.nombre}, Precio: ${prod.precio}`);
 })
+console.log("----------------------------------");
+
+
+// Parte 2: Métodos de transformación y filtrado --------------------
+
+// 4. Obtener solo los nombres con .map():
+const soloNombres = productos.map((prod) => prod.nombre);
+console.log("Nombres de los productos:", soloNombres);
+console.log("----------------------------------");
+
+// 5. Filtrar por categoría con .filter():
+const productosRopa = productos.filter((prod) => prod.categoria == "Ropa");
+console.log(productosRopa);
+console.log("----------------------------------");
+
+// 6. Filtrar por precio con .filter():
+const maxPrecio = 3000;
+const masCarosQue = productos.filter((prod) => prod.precio > maxPrecio);
+console.log(masCarosQue);
+console.log("----------------------------------");
+
+// 7. Buscar un producto específico con .find():
+const productoABuscar = "Gorra";
+const prodBuscado = productos.find((prod) => prod.nombre == "Gorra");
+console.log(prodBuscado);
+console.log("----------------------------------");
+
